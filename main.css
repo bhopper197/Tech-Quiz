@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=DM+Sans:wght@500&family=Montserrat&family=Orbitron:wght@500&display=swap');
+
+:root {
+    background-color: #1F2041;
+    font-size: 62.5%;
+
+}
+
+* {
+    display: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #C6D4FF;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+h1 > span {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+h2 {
+  font-size: 4.2rem;
+  margin-bottom: 4rem;
+  font-weight: 700;  
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    padding-bottom: 3rem;
+}
+/* Only increase the size of the image when the screen is bigger than 800 pixels */
+@media only screen and (min-width: 480px) {
+    img {
+        width: 45rem;
+    }
+
+    * {
+        box-sizing: border-box;
+        font-family: 'Orbitron', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #C6D4FF;
+    }
+
+    .button {
+        width: 25rem;
+    }
+
+    
+}
+
+/* UTILITIES CLASSES */
+
+.container {
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.container-home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.container > * {
+    width: 100%;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+/* BUTTON STYLES */
+
+.button {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem 0;
+    width: 20rem;
+    margin-bottom: 2rem;
+    border: 0.15rem solid #C6D4FF;
+    border-radius: 1rem;
+    color: #14212A;
+    background-color: #FFFFFF;
+}
+
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.5rem 0 #CADFFF;
+    transform: translateY(-0.2rem);
+    /* transition: ease-in-out(04.2rem); */
+    background-color: #14212A;
+    color: #FFFFFF;
+}
+
+.button[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

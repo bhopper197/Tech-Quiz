@@ -1,0 +1,147 @@
+h2 {
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+.choice-container {
+    display: flex;
+    margin-bottom: 2rem;
+    width: 100%;
+    font-size: 1.5rem;
+    border: 0.1rem solid rgb(86, 165, 235, 0.25);
+    border-radius: 0.2rem;
+    background-color: #FFFFFF;
+}
+
+.choice {
+    padding: 0.9rem 0.9rem;
+    background-color: #141529;
+    color: #FFFFFF;
+}
+
+.choice-text {
+    font-family:'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #14212A;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.correct:after {
+    width: 250rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: 'CORRECT';
+    background-color: #307351;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+.incorrect::after {
+    width: 250rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: 'INCORRECT';
+    background-color: #E15554;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+/* HUD */
+
+#hud {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8rem;
+}
+
+.hud-prefix {
+    text-align: auto;
+    font-size: 1rem;
+    padding-bottom: 1px;
+    padding-top: 2px;
+}
+
+/* Progress Bar */
+
+#progress-bar {
+    margin-top: 1rem;
+    width: 25rem;
+    height: 2rem;
+    border: 0.4rem  solid #FFFFFF;
+    border-radius: 0.2rem;
+}
+
+#progress-bar-full {
+    height: 1.2rem;
+    width: 0%;
+    background-color: #FFFFFF;
+}
+
+@media only screen and (min-width: 480px) {
+
+    h2 {
+    font-size: 35px;
+    }
+    img {
+        max-width: 45rem;
+    }
+
+    .incorrect::after {
+
+        font-size: 30px;
+    }
+    .correct:after {
+        font-size: 30px;
+    }
+
+    .choice-container {
+        display: flex;
+        margin-bottom: 2rem;
+        width: 100%;
+        font-size: 1.8rem;
+        border: 0.1rem solid rgb(86, 165, 235, 0.25);
+        border-radius: 0.2rem;
+        background-color: #FFFFFF;
+    }
+
+    .choice {
+        padding: 1.5rem 2.0rem;
+    }
+
+    #progress-bar {
+        width: 25rem;
+        height: 4rem;
+        border: 0.4rem  solid #FFFFFF;
+        border-radius: 0.2rem;
+    }
+    
+    #progress-bar-full {
+        height: 3.2rem;
+        background-color: #FFFFFF;
+    }
+  
+    .hud-prefix {
+    text-align: auto;
+    font-size: 2rem;
+    }
+    
+    
+}
+
+/* Only Display hover effect on devices wider than 1050 */
+@media only screen and (min-width: 1050px) {
+    .choice-container:hover {
+        cursor: pointer;
+        box-shadow: 0 0.5rem 1.5rem 0 #CADFFF;
+        background-color: #CADFFD;
+        transform: translateY(-0.2rem);
+        transition: ease-in-out(04.2rem);
+    }
+}
