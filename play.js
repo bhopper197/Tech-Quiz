@@ -155,7 +155,7 @@ function acquireNewQuestion() {
     if(openQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
         // Call the saveScore function to save the user's accumulated score. 
         saveScore();
-        return window.location.assign('/end.html')
+        return window.location.assign('end.html')
     }
     
     // Increment questions counter and update question counter text.
