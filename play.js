@@ -167,18 +167,20 @@ function acquireNewQuestion() {
 
     // Using the Math.random() to pick a random question number in conjunction with openQuestions length.
     // The Math.floor() insures that it is an integer.
-    const QUESTION_INDEX = Math.floor(Math.random() * openQuestions.length); 
-    currentQuestion = openQuestions[QUESTION_INDEX];
+    const questionIndex = Math.floor(Math.random() * openQuestions.length);
+    currentQuestion = openQuestions[questionIndex];
     question.innerText = currentQuestion.question;
 
     // Checks the number property on the choice to compare it against the correct answer number in our questions array.
     choices.forEach( choice => {
         const number = choice.dataset['number'];
+
+        // CHANGE THIS
         choice.innerText = currentQuestion['choice' + number];
     });
 
     // Takes remaining questions in the array and cuts out the previous question.
-    openQuestions.splice(QUESTION_INDEX, 1); 
+    openQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
 };
@@ -193,8 +195,8 @@ choices.forEach(choice => {
         if(!acceptingAnswers) return;
 
         acceptingAnswers = false;
-        const SELECTED_CHOICE = event.target;
-        const SELECTED_ANSWER = SELECTED_CHOICE.dataset['number'];
+        const selectedChoice = event.target;
+        const SELECTED_ANSWER = selectedChoice.dataset['number'];
 
         // Check to see if the answer the user selected matches the one found in currentQuestion.
         // If so apply CSS classes.
@@ -204,11 +206,11 @@ choices.forEach(choice => {
             incrementScore(CORRECT_BONUS);
         }
 
-        SELECTED_CHOICE.parentElement.classList.add(classToApply);
+        selectedChoice.parentElement.classList.add(classToApply);
 
         // Use the Java Script setTimeout function to briefly pause before the user moves onto the next question.
         setTimeout(() => {
-            SELECTED_CHOICE.parentElement.classList.remove(classToApply);
+            selectedChoice.parentElement.classList.remove(classToApply);
             acquireNewQuestion();
         }, 1600);
     }); 
