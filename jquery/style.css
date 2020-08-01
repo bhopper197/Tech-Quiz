@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=DM+Sans:wght@500&family=Montserrat&family=Orbitron:wght@500&display=swap');
+
+body {
+    font-family: "Montserrat";
+    color: #1F2041;
+    margin:0;
+    background:cover;
+    background-color: #1F2041;
+  }
+  input#option {
+    color: #307351;
+  }
+  
+  header {
+    margin-top: 25px;
+    height:80px;
+    color: white;
+    margin-bottom: 55px;
+  }
+  
+  .row {
+    max-width: 50rem;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  header h1{
+    font-family: "Orbitron";
+    line-height: 1;
+    top: 24px;
+    text-align: center;
+  }
+
+  p {
+      display: flex;
+      justify-content: center;
+      font-family: "Orbitron";
+  }
+  
+  header .question-and-score {
+    font-size: 1rem;
+    font-weight: bolder;
+    color:#FFFFFF;
+    background: none;
+  }
+  
+  .question-and-score ul {
+    display: flex;
+    justify-content: space-between;
+    text-align:center;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  .question-and-score li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    font-family: "Orbitron";
+  }
+  
+  button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    height: 2rem;
+    width: 7rem;
+    font-size: 1.4rem;
+    font-family: "Montserrat";
+    font-weight: 600;
+    text-align: center;
+    color:#14212A;
+    background: #FFFFFF;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 0.2rem;
+    padding: 0;
+  }
+
+  button#restart {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    height: 3rem;
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Montserrat";
+    font-weight: 600;
+    text-align: center;
+    color:#14212A;
+    background: #FFFFFF;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 0.2rem;
+    padding: 0;
+  }
+  
+  fieldset {
+    display: flex;
+    width: 90%;
+    padding: 0.7rem;
+    margin: 0 auto;
+    background:#CADFFF;
+    border-radius: 0.3rem;
+  }
+  
+  legend {
+    font-family: "Orbitron";
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  legend#home {
+    display: flex;
+    padding-top: 3rem;
+    padding-bottom: 0rem;
+  }
+  
+  .question-form .question {
+    margin-bottom: 20px;
+    padding: 0 2%;
+    font-size: 20px;
+    font-weight: 100px;
+  }
+  
+  .options ul {
+    list-style: none;
+    margin:0;
+    text-align:left;
+  }
+  
+  label {
+    display: inline-flex;
+    font-size:1.2rem;
+  }
+  
+  .options span {
+    display:block;
+    border-radius:5px;
+  }
+  
+  .right-answer {
+   background:#307351;
+   color: #FFFFFF;
+   padding: 10px 20px;
+   margin: 5px 20px;
+  }
+  
+  .wrong-answer {
+    background:#E15554;
+    color: #FFFFFF;
+    padding: 1rem;
+    margin: 5px 20px;
+  }
+  
+  .question-form button {
+    float: center;
+  }
+  
+  button:hover:enabled,
+  button:focus:enabled{
+    background-color: #1F2041;
+    color: #FFFFFF;
+  }
+
+  button#start:hover:enabled,
+  button#start:focus:enabled{
+    background-color: #1F2041;
+    color: #FFFFFF;
+  }
+
+  button#restart:hover:enabled,
+  button#restart:focus:enabled{
+    background-color: #1F2041;
+    color: #FFFFFF;
+  }
+  
+  button:disabled {
+    opacity:0.5;
+  }
+
+  @media only screen and (min-width: 640px) {
+    label {
+        font-size: 1.5rem;
+      }
+
+    .question-and-score ul {
+        font-size: 2rem;
+    }
+
+    header h1 {
+      font-size: 65px;
+    }
+
+    fieldset {
+      margin-top: 7rem;
+      width: 50%;
+    }
+}
