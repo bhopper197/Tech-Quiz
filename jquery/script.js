@@ -54,6 +54,8 @@ function makeMainHtml(questionText){
     </fieldset>
     </form>
   </div>`;
+
+  return questionHtml;
 };
 // Displays the question from the global DATA array.
 function displayMain(questionText, options) {
@@ -98,7 +100,8 @@ function displayResults() {
 function handleDataQuestions() {
   $('body').on('click','#next-question', (event) => {
     DATA.currentQuestionIndex === 
-    DATA.questions.length?displayResults() : displayMain();
+      DATA.questions.length?displayResults() : 
+      displayMain(getCurrentPrompt(), getCurrentOptions());
   });
 };
 
@@ -152,7 +155,7 @@ function handleStartQuiz() {
 
 function handleRestartQuiz() {
   $('body').on('click','#restart', (event) => {
-    displayMain(getCurrentPrompt());
+    displayMain(getCurrentPrompt(), getCurrentOptions());
   });
 };
 
