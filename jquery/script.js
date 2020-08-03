@@ -8,10 +8,6 @@ function updateHud(props) {
 };
 
 // Displays the choices for the current question.
-// TO DO: Pass an array that contains the questions as an argument.
-// TO DO: Figure out how to run ES Lint in VS Code.
-// let question = DATA.questions[DATA.currentQuestionIndex].
-
 function updateOptions(options)
 {
   for(let i=0; i<options.length; i++)
@@ -26,6 +22,7 @@ function updateOptions(options)
   
 };
 
+// Makes HTML question content to be appended to the DOM.
 function makeMainHtml(questionText){
   const questionHtml = `
   <div>
@@ -57,7 +54,7 @@ function makeMainHtml(questionText){
 
   return questionHtml;
 };
-// Displays the question from the global DATA array.
+// Displays the question and options to the DOM.
 function displayMain(questionText, options) {
   let props = {
     answered: DATA.currentQuestionIndex + 1,
@@ -96,7 +93,7 @@ function displayResults() {
   $("main").html(resultHtml);
 }
 
-// Checks whether it reached the end of questions list.
+// Checks whether the app has reached the end of questions list.
 function handleDataQuestions() {
   $('body').on('click','#next-question', (event) => {
     DATA.currentQuestionIndex === 
@@ -144,9 +141,8 @@ function getCurrentOptions(){
 function getCurrentPrompt(){
   return DATA.questions[DATA.currentQuestionIndex].prompt;
 };
-// When a user clicks on start quiz button.
-// The biz logic is to figure out the current question.
-// And then get it from the model and pass it to the view.
+
+// 
 function handleStartQuiz() {
   $('#start').on('click', function(event){
     displayMain(getCurrentPrompt(), getCurrentOptions());
@@ -161,9 +157,9 @@ function handleRestartQuiz() {
 
 function runQuizApp() {
   handleStartQuiz(); // Initial Render.
-  handleDataQuestions();
-  handleSelectOption();
-  handleRestartQuiz();
+  handleDataQuestions(); // Checks and sees if the user has reached the end of the quiz.
+  handleSelectOption(); // Gives and checks the options the user has selected.
+  handleRestartQuiz(); // Render quiz again if the user selects restart quiz.
 }
 
 $(runQuizApp);
