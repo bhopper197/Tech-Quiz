@@ -1,8 +1,8 @@
 # Tech Quiz V.2
 This version is written using the <b>jQuery</b> library.
 
-## MVC (Modal View Controller)
-The code in this app is organized using the <strong>Modal-View-Controller.</strong> We are using this convention so we have <br>
+## MVC (Model View Controller)
+The code in this app is organized using the <strong>Model-View-Controller.</strong> We are using this convention so we have <br>
 a separation of concerns in our functions and data. It makes the code more modular and reusable. <br>
 <br>
 <strong>Modal:</strong> Model code reflects real-world things. This code holds the raw data, <br>
