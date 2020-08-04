@@ -69,14 +69,14 @@ function displayMain(questionText, options) {
 };
 
 // Displays users score and gives the user the option to restart the quiz.
-function displayResults() {
-  let resultHtml = $(
+function displayResults(score, questionsLength) {
+  let resultHtml =
     `<div class="results">
       <form id="js-restart-quiz">
         <fieldset>
           <div class="row">
             <div class="col-12">
-              <legend>Your Score is: ${DATA.score}/${DATA.questions.length}</legend>
+              <legend>Your Score is: ${score}/${questionsLength}</legend>
             </div>
           </div>
         
@@ -87,18 +87,20 @@ function displayResults() {
           </div>
         </fieldset>
     </form>
-    </div>`);
-    DATA.currentQuestionIndex = 0;
-    DATA.score = 0;
+    </div>`;
   $("main").html(resultHtml);
 }
 
 // Checks whether the app has reached the end of questions list.
 function handleDataQuestions() {
   $('body').on('click','#next-question', (event) => {
-    DATA.currentQuestionIndex === 
-      DATA.questions.length?displayResults() : 
+    if(DATA.currentQuestionIndex === DATA.questions.length) {
+      displayResults(DATA.score, DATA.questions.length);
+      DATA.score = 0;
+      DATA.currentQuestionIndex = 0;
+    } else {
       displayMain(getCurrentPrompt(), getCurrentOptions());
+    }
   });
 };
 
