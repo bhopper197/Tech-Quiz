@@ -8,3 +8,5 @@ This app has two versions.
 
 ## jQuery.js V.2
  - Utilizes the jQuery library to access and implement data.
+
+Link to Live Apps: https://tech-quiz.vercel.app/
